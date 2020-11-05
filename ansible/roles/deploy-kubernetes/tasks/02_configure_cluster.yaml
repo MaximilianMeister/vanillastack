@@ -90,6 +90,7 @@
   with_items:
     - net.ipv4.conf.all.rp_filter
     - net.ipv4.conf.default.rp_filter
+  when: ansible_distribution == 'Ubuntu' and ansible_distribution_version != '20.04'
 
 - name: Disable Swap
   command: swapoff -a

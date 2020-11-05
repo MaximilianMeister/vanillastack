@@ -1,4 +1,12 @@
 ---
+- name: Cleanup Old Rook Namespace
+  command: kubectl delete namespace rook-ceph
+  when: rook.enabled
+
+- name: Cleanup Old Rook cache
+  command: "rm -rf /var/lib/rook"
+  when: rook.enabled
+
 - name: Deploy Rook
   include_tasks: deploy.yaml
   when: rook.enabled

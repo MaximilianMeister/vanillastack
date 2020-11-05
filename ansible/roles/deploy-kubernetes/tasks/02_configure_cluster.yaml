@@ -32,13 +32,13 @@
     - /etc/containers/registries.conf
   when: commercial.enabled
 
-- name: remove cni configs
-  file:
-    path: "{{ item }}"
-    state: absent
-  loop:
-    - "/etc/cni/net.d/100-crio-bridge.conf"
-    - "/etc/cni/net.d/200-loopback.conf"
+  #- name: remove cni configs
+  #  file:
+  #    path: "{{ item }}"
+  #    state: absent
+  #  loop:
+  #    - "/etc/cni/net.d/100-crio-bridge.conf"
+  #    - "/etc/cni/net.d/200-loopback.conf"
 
 - name: Make sure crio service is running 
   systemd:

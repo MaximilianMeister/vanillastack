@@ -18,7 +18,7 @@
                  --upload-certs \
                  --apiserver-bind-port {{ apiport }} \
                  --certificate-key {{ certificate_key }} \
-                 --ignore-preflight-errors=Port-6443 \
+                 --ignore-preflight-errors="all" \
                  {% if ansible_distribution != 'Debian' %}
                  --skip-phases=addon/kube-proxy \
                  {% endif %}

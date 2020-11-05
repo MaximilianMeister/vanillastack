@@ -14,5 +14,6 @@
                  --discovery-token-unsafe-skip-ca-verification \
                  --control-plane api.{{ kubernetes.loadBalancer.clusterDomain }}:6443 \
                  --certificate-key {{ certificate_key }} \
-                 --apiserver-bind-port {{ apiport }}
+                 --apiserver-bind-port {{ apiport }} \
+                 --ignore-preflight-errors='all'
 
